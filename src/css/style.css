@@ -1,0 +1,75 @@
+@import "../../node_modules/tailwindcss";
+
+:root {
+    --index: calc(1vw + 1vh);
+    --text-color: #eeeded;
+    --text-sub: #cdc6c3;
+}
+
+@layer base {
+    @font-face {
+        font-family: outfit-c, sans-serif;
+        src: url('/fonts/outfit-regular.woff2') format('woff2'),;
+    }
+    @font-face {
+        font-family: raleway-c, sans-serif;
+        src: url('/fonts/raleway-regular.woff2') format('woff2'),;
+    }
+
+    html{
+        font-family: raleway-c, sans-serif;
+    }
+
+    h1,h2,h3,h4,h5,h6{
+        font-family: outfit-c, sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        background-image: url("/img/bg.jpg");
+        background-size: 75px;
+        color: var(--text-color);
+        overflow-x: hidden;
+    }
+
+    .hero-img {
+        position: absolute;
+        width: calc(var(--index) * 36);
+        left: 37vw;
+        top: 15vh;
+    }
+
+    .container {
+        padding: 0 7vw;
+    }
+}
+
+@layer components {
+    .main-header {
+        @apply h-[100vh]
+    }
+
+    .main-title {
+        @apply text-8xl sm:text-[200px] absolute w-min bottom-[12vh] leading-[.9]
+    }
+
+    .gallery-item {
+        @apply max-w-7xl py-[150px] max-h-screen rounded-lg
+    }
+
+    .gallery-right .gallery-item {
+        @apply my-0
+    }
+
+    .text-block {
+        @apply text-gray-100 relative
+    }
+
+    .text-block-h {
+        @apply text-2xl my-2
+    }
+
+    .text-block-p {
+        @apply leading-7
+    }
+}
